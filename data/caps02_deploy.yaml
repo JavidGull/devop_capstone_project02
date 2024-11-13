@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: caps02-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: caps02-deployment
+    spec:
+      containers:
+      - name: caps02-deployment
+        image: JavidGull/devop_capstone_project02.git
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: caps02-service
+spec:
+  type: NodePort
+  selector:
+    app.kubernetes.io/name: caps02_deployment
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30008
