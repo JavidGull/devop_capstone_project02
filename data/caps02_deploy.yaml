@@ -4,6 +4,9 @@ metadata:
   name: capstone_project02
 spec:
   replicas: 2
+  selector:
+    matchLabels:
+      app: caps02-deployment
   template:
     metadata:
       labels:
