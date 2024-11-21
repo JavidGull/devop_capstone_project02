@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: caps02-deployment
+  name: capstone_project02
 spec:
   replicas: 2
   template:
@@ -23,7 +23,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app.kubernetes.io/name: caps02_deployment
+    app.kubernetes.io/name: capstone_project02
   ports:
     - port: 80
       targetPort: 80
